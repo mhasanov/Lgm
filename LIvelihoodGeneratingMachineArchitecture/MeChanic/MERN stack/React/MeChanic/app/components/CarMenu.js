@@ -8,7 +8,7 @@ export default function CarMenu({ navigation }) {
             <Text style={styles.item}>{navigation.getParam('make')}</Text>
             <Text style={styles.item}>{navigation.getParam('model')}</Text>
             <Text style={styles.item}>{navigation.getParam('year')}</Text>
-
+            {/* */}
         </View>
         
     )
