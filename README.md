@@ -15,7 +15,9 @@ Please use git branching as necessary.
 *Use bootstrap with React Native
 *Add state management (maybe Redux) to our tech stack design
 *Integrate Redis into our tech stack design
-
+*react-native-skeleton-placeholder
+*Animated loader
+*Enable Dark Mode change
 
 #App Ideas:
 ...
