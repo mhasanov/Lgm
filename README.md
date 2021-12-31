@@ -9,6 +9,9 @@ Please use git branching as necessary.
 
 #TODO:
 
+*Start building common pages/components: LogIn/SignUp, Welcome, User, Settings, Home, MenuBar, etc.
+*Start creating backend integration for those common pages/components.
+
 *Use bootstrap with React Native
 *Add state management (maybe Redux) to our tech stack design
 *Integrate Redis into our tech stack design
