@@ -1,23 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './app/screens/LoginScreen';
+import React, { useState } from 'react';
+import * as Font from 'expo-font';
+import{ AppLoading } from 'expo';
+import Navigator from "./app/screens/RootStackScreen";
+
 
 
 export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(true);
+
   return (
-    <View style={styles.container}>
-      <LoginScreen></LoginScreen>
-      <StatusBar style="auto" />
-    </View>
+    Navigator()
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

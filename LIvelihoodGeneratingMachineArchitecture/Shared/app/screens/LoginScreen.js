@@ -7,7 +7,7 @@ import FormTextClicable from '../components/FormTextClicable';
 import SocialButton from '../components/SocialButton';
 
 
-const LoginScreen = ({}) => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const[password, setPassword] = useState();
     const SignIn = () => {};
