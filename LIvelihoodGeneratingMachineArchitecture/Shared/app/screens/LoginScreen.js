@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { globalStyles, images } from '../assets/styles/global';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
