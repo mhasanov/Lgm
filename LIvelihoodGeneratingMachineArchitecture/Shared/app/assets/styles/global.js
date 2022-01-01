@@ -3,6 +3,7 @@ import {windowHeight, windowWidth} from '../../utils/Dimentions'
 
 export const globalStyles = StyleSheet.create({
     container: {
+        backgroundColor: '#c71230',
         flex: 1,
         padding: 7,
     },
@@ -69,6 +70,7 @@ export const globalStyles = StyleSheet.create({
     forgotButton: {
         marginVertical: 35,
     }
+
 });
 
 export const images = {
