@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Shared",
-    "slug": "Shared",
+    "name": "shared",
+    "slug": "shared",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "Shared"
+  "name": "shared"
 }

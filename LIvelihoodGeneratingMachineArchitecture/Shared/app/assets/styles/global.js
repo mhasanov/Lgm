@@ -27,7 +27,6 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#ffffff',
-        fontFamily: 'Lato-Regular',
     },
     inputContainer: {
         marginTop: 5,
@@ -45,7 +44,6 @@ export const globalStyles = StyleSheet.create({
         padding: 10,
         flex: 1,
         fontSize: 16,
-        fontFamily: 'Lato-Regular',
         color: '#333',
         justifyContent: 'center',
         alignItems: 'center',
@@ -59,7 +57,6 @@ export const globalStyles = StyleSheet.create({
         resizeMode: 'cover',
     },
     text: {
-        fontFamily: 'Kufam-SemiBoldItalic',
         fontSize: 28,
         marginBottom: 10,
         color: '#051d5f'
@@ -68,7 +65,6 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '500',
         color: '#2e64e5',
-        fontFamily: 'Lato-Regular',
     },
     forgotButton: {
         marginVertical: 35,
