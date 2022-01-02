@@ -6,7 +6,7 @@ import RootStackScreen from "./app/screens/RootStackScreen";
 
 
 export default function App() {
-  const [fontLoaded, setFontLoaded] = useState(true);
+  const [userToken, setUserToken] = React.useState(null);
 
   return (
     RootStackScreen()
