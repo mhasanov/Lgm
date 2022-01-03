@@ -6,11 +6,12 @@ import FormButton from '../components/FormButton';
 import FormTextClicable from '../components/FormTextClicable';
 import SocialButton from '../components/SocialButton';
 
-
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const[password, setPassword] = useState();
-    const SignIn = () => {};
+    
+    //Send the credentials to the back end for validation
+    //Validate the credentials on the back end
 
     return(
         <View style={globalStyles.loginContainer}>

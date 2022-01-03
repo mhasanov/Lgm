@@ -7,10 +7,31 @@ import FormTextClicable from '../components/FormTextClicable';
 
 
 const SignUpScreen = ({ navigation }) => {
-    const [email, setEmail] = useState();
+    const[email, setEmail] = useState();
     const[password, setPassword] = useState();
     const[confirmPassword, setConfirmPassword] = useState();
-    const SignUp = () => {};
+
+    //TODO: add features such as smaill red text to guide user on how to enter password and email
+    //TODO: small red error text if email format not valied
+    //TODO: small red error text if passwords do not match
+    //TODO: add a button to unhide the password entry, the eye icon
+
+
+    const SignUp = () => {
+        if (password == confirmPassword){                           //TODO: not sure is this is the best way to check their values
+            fetch('http://localhost:5000/api/v1/users/user', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },            
+                body: JSON.stringify({
+                    "user": email,
+                    "password": password
+                })
+            });
+        }
+    }
 
     return(
         <View style={globalStyles.loginContainer}>
@@ -41,7 +62,7 @@ const SignUpScreen = ({ navigation }) => {
             />
             <FormButton
                 buttonTitle="Sign Up"
-                onPress={() => Signup()}
+                onPress={() => SignUp()}
             />
         </View>
     );
