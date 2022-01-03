@@ -78,4 +78,22 @@ export default class UserController {
             res.status(500).json({ error: e.message})
         }
     }
+
+
+    static async apiLogIn(req, res, next) {
+        try{
+            let filters = {}
+            filters.user = req.body.user
+            const user = await UsersDAO.getUsers({ filters })
+            if (user.totalNumUsers == 1 && 
+                user.usersList[0].password == req.body.password) {
+                    res.json({ status: "success"})
+            } else {
+                res.json({ status: "fail, user and password don't exist..."})
+            }
+            
+        } catch (e) {
+            res.status(500).json({ error: e.message})
+        }
+    }
 }

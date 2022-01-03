@@ -12,4 +12,10 @@ router
     .put(UserCtrl.apiUpdateUser)
     .delete(UserCtrl.apiDeleteUser)
     .get(UserCtrl.apiGetUser)
+
+router
+    .route("/login")
+    .post(UserCtrl.apiLogIn)
+
+
 export default router

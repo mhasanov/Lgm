@@ -13,6 +13,26 @@ const LoginScreen = ({ navigation }) => {
     //Send the credentials to the back end for validation
     //Validate the credentials on the back end
 
+    const SignIn = async () => {
+        try{
+            const response = await fetch('http://localhost:5000/api/v1/users/login', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },            
+                body: JSON.stringify({
+                    "user": email,
+                    "password": password
+                })
+            });
+            const json = await response.json();
+            console.log(json);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return(
         <View style={globalStyles.loginContainer}>
             <Image
