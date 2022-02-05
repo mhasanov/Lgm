@@ -5,7 +5,10 @@ import { globalStyles, images } from '../assets/styles/global';
 const Questions = ({ navigation }) => {
 
     /*
+
     var not_started = [];
+
+
     //TODO:
     for (let i = 0; i < 1; i++) {               //Replace 1 with 75
         //if question is not started    //Check user database
