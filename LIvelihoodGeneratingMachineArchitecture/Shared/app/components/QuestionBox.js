@@ -3,7 +3,8 @@ import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { globalStyles } from '../assets/styles/global';
 
 
-const QuestionBox = ({name, difficulty}) => {
+const QuestionBox = ({name, difficulty, onClick}) => {
+
     return(
         <TouchableOpacity>
             <View style={styles.button}>

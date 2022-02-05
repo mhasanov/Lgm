@@ -31,23 +31,26 @@ const Questions = ({ navigation }) => {
 
     for (let i = 0; i < stringOf75BoolValues.length; i++) {
         if(stringOf75BoolValues.charAt(i) == '0'){
+            
             questionNumbersNotComplete.push(
                 <View key={i}>
-                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]}></QuestionBox>
+                    <QuestionBox name={QuestionsInfo.name[i]}
+                        difficulty={QuestionsInfo.difficulty[i]}
+                        onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
                 </View>
             );
         }
         else if(stringOf75BoolValues.charAt(i) == '1'){
             questionNumbersInProgress.push(
                 <View key={i}>
-                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]}></QuestionBox>
+                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]} onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
                 </View>
             );
         }
         else if(stringOf75BoolValues.charAt(i) == '2'){
             questionNumbersComplete.push(
                 <View key={i}>
-                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]}></QuestionBox>
+                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]} onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
                 </View>
             );
         }
