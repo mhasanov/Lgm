@@ -2,24 +2,40 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { globalStyles, images } from '../assets/styles/global';
 import * as Animatable from 'react-native-animatable';
 import { StyleSheet } from "react-native";
-
+import { Button } from 'react-native';
+import React from 'react';
 
 const SplashScreen = ({ navigation }) => {
 
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+          headerRight: () => (
+            <View>
+                <Button
+                onPress={() => navigation.navigate('SignIn')}
+                title="Log In"
+                />
+                <Button
+                onPress={() => navigation.navigate('SignUp')}
+                title="Sign Up"
+                />
+          </View>
+          ),
+        });
+      }, [navigation]);
+    
+
     return(
         <View style={globalStyles.loginContainer}>
-            <Image
-                source={images.compnyAssets.logo}
-                style={globalStyles.logo}
-                resizeMode='stretch'
-            />
-            <Text style={globalStyles.text}>App Name Placeholder</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                <Text>Sign Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-                <Text>Sign In</Text>
-            </TouchableOpacity>
+            <View>
+                <Text>Blind 75</Text>
+            </View>
+            <View>
+                <Text>What is the Blind 75 website</Text>
+            </View>
+            <View>
+                <Text>...........</Text>
+            </View>
         </View>
     );
 };
