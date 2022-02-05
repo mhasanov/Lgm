@@ -5,24 +5,8 @@ import { StyleSheet } from "react-native";
 import { Button } from 'react-native';
 import React from 'react';
 
-const SplashScreen = ({ navigation }) => {
 
-    React.useLayoutEffect(() => {
-        navigation.setOptions({
-          headerRight: () => (
-            <View>
-                <Button
-                onPress={() => navigation.navigate('SignIn')}
-                title="Log In"
-                />
-                <Button
-                onPress={() => navigation.navigate('SignUp')}
-                title="Sign Up"
-                />
-          </View>
-          ),
-        });
-      }, [navigation]);
+const SplashScreen = ({ navigation }) => {
     
 
     return(
