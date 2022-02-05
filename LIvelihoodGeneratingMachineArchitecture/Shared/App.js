@@ -22,10 +22,6 @@ export default function App() {
 
   
   return (
-    userToken == null ? (
-      RootStackScreen()
-    ) : (
-      <Text>Signed In</Text>
-    )
+    RootStackScreen()
   );
 }
