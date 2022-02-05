@@ -1,47 +1,67 @@
-import React from 'react'
-import { Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import SplashScreen from './SplashScreen';
-import { View } from 'react-native-animatable';
-import Icon from 'react-native-vector-icons/AntDesign';
-import Questions from './Questions';
-import QuestionScreen from './QuestionScreen';
+import React, {useState} from "react";
+import { Text, View, Image } from 'react-native';
+import { globalStyles, images } from '../assets/styles/global';
+import { QuestionsInfo } from "../utils/QuestionsInfo";
+import QuestionBox from "../components/QuestionBox";
 
-const Stack = createStackNavigator()
+const Questions = ({ navigation }) => {
 
+    var stringOf75BoolValues = "0121"//Check user database
 
-export default function RootStackScreen() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+    var questionNumbersNotComplete = []
+    var questionNumbersInProgress = []
+    var questionNumbersComplete = []
 
-      <Stack.Screen name='Home' component={SplashScreen} options={({navigation}) => ({
-          headerRight: () => (
+    for (let i = 0; i < stringOf75BoolValues.length; i++) {
+        if(stringOf75BoolValues.charAt(i) == '0'){
+            
+            questionNumbersNotComplete.push(
+                <View key={i}>
+                    <QuestionBox name={QuestionsInfo.name[i]}
+                        difficulty={QuestionsInfo.difficulty[i]}
+                        onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
+                </View>
+            );
+        }
+        else if(stringOf75BoolValues.charAt(i) == '1'){
+            questionNumbersInProgress.push(
+                <View key={i}>
+                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]} onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
+                </View>
+            );
+        }
+        else if(stringOf75BoolValues.charAt(i) == '2'){
+            questionNumbersComplete.push(
+                <View key={i}>
+                    <QuestionBox name={QuestionsInfo.name[i]} difficulty={QuestionsInfo.difficulty[i]} onClick={() => {navigation.navigate('QuestionScreen', {itemId: i})}} />
+                </View>
+            );
+        }
+    }
+
+      
+    return(
+        <View style={globalStyles.loginContainer}>
             <View>
-              <Icon.Button name="google" size={30} color="#" />
-              <Button onPress={() => navigation.navigate('Questions')} title="Questions" color="#841584" accessibilityLabel="Questions" />
             </View>
-          ),
-        })}/>
-
-        <Stack.Screen name='Questions' component={Questions} options={{
-          headerRight: () => (
-            <Icon.Button  name="google" size={30} color="#" />
-          ),
-        }}/>
-
-
-        <Stack.Screen name='QuestionScreen' component={QuestionScreen} ons={({navigation}) => ({
-          headerRight: () => (
             <View>
-              <Icon.Button name="google" size={30} color="#" />
-              <Button onPress={() => navigation.navigate('Questions')} title="Questions" color="#841584" accessibilityLabel="Questions" />
-            </View>
-          ),
-        })}/>
+                <View>
+                    <Text>Not Started</Text>
+                    {questionNumbersNotComplete}
+                </View>
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+                <View>
+                    <Text>In Progress</Text>
+                    {questionNumbersInProgress}
+                </View>
+
+                <View>
+                    <Text>Complete</Text>
+                    {questionNumbersComplete}
+                </View>
+            </View>
+        </View>
+    );
+};
+
+export default Questions;
