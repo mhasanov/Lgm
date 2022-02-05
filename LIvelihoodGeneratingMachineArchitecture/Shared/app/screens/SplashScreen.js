@@ -5,12 +5,15 @@ import { StyleSheet } from "react-native";
 import { Button } from 'react-native';
 import React from 'react';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const SplashScreen = ({ navigation }) => {
+function SplashScreen({ navigation })  {
     
-
     return(
         <View style={globalStyles.loginContainer}>
+            
+            <Button onPress={() => navigation.navigate('Questions')} title="Questions" color="#841584" accessibilityLabel="Questions" />
             <View>
                 <Text>Blind 75</Text>
             </View>
