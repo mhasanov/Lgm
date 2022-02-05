@@ -8,11 +8,10 @@ export const globalStyles = StyleSheet.create({
         padding: 7,
     },
     loginContainer: {
-        backgroundColor: '#f9fafd',
-        flex: 1,
+        backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
+        flex:1,
     },
     buttonContainer: {
         marginTop: 10,
@@ -69,7 +68,23 @@ export const globalStyles = StyleSheet.create({
     },
     forgotButton: {
         marginVertical: 35,
-    }
+    },
+    intro:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf:'center',
+        textAlign:'center',
+        width:'100%',
+        flex:1,
+        backgroundColor:'#3C0F6F',
+        color:'#ffc2e0', 
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center"
+    },
+
+   
 
 });
 
