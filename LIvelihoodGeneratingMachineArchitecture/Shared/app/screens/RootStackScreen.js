@@ -31,13 +31,15 @@ export default function RootStackScreen() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
 
-      <Stack.Screen name='Home' component={SplashScreen} options={{
+      <Stack.Screen name='Home' component={SplashScreen} options={({navigation}) => ({
           headerRight: () => (
             <View>
               <Icon.Button name="google" size={30} color="#" />
+              <Button onPress={() => navigation.navigate('Questions')} title="Questions" color="#841584" accessibilityLabel="Questions" />
+            
             </View>
           ),
-        }}/>
+        })}/>
 
         <Stack.Screen name='Questions' component={Questions} options={{
           headerRight: () => (
