@@ -1,4 +1,4 @@
-# Ligma
+# Lgma
 LIvelihood Generating Machine Architecture
 
 All components to be shared among projects is to be placed within a folder specifically for shared components in the LIvelihoodGeneratingMachineArchitecture folder.
